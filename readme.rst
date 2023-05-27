@@ -1,3 +1,5 @@
+PROYEK GO-Online Riset Mahasiswa
+
 
 **Main Components**
 
@@ -131,8 +133,8 @@
 	Run The Project - 	
 	Front - localhost/{projectname}				
 	Admin Backend - localhost/{projectname}/administrator		
-			Admin UserName - ynandan55@gmail.com		
-			      Password - 123456		
+			Admin UserName - 20081010175@student.upnjatim.ac.id		
+			      Password - royanfajar		
 	
 	
 
