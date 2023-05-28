@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 //user routes
 $route['users/register'] = 'users/register';
+$route['users/edit_profile'] = 'users/edit_profile';
 $route['users/dashboard'] = 'users/dashboard';
 $route['comments/create/(:any)'] = 'comments/create/$1';
 $route['categories'] = 'category/index';

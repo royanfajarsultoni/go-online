@@ -47,4 +47,22 @@
 				return false;
 			}
 		}
-	}
+		
+		//get user dari id user
+		public function get_user_by_id($user_id) {
+
+			$query = $this->db->get_where('users', array('id' => $user_id));
+		
+			if ($query->num_rows() > 0) {
+				return $query->row_array(); // Mengembalikan data sebagai array
+			} else {
+				return null;
+			}
+
+		}
+
+		public function update_profile($user_id, $data) {
+			$this->db->where('id', $user_id);
+			return $this->db->update('users', $data);
+		}
+}
