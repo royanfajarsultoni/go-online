@@ -97,15 +97,15 @@
    	<script>
         CKEDITOR.replace( 'editor1' );
     </script>
-    <script src="../go-online/assets/js/jquery.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- jQuery Plugins -->
-    <script src="../go-online/assets/js/slick.min.js"></script>
-    <script src="../go-online/assets/js/nouislider.min.js"></script>
-    <script src="../go-online/assets/js/jquery.zoom.min.js"></script>
-    <script src="../go-online/assets/js/main.js"></script>
-    <script src="../go-online/assets/js/formstyle.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/slick.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/nouislider.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/jquery.zoom.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/formstyle.js"></script>
     
 
   </body>

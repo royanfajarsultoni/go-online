@@ -1,36 +1,32 @@
 <html>
   <head>
     <title>Go-Online</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/style.css">
-    <script src="http://cdn.ckeditor.com/4.7.1/full/ckeditor.js"></script>
-
-    <meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-		<title>Electro - HTML Ecommerce Template</title>
-
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/style.css">
+		<script src="http://cdn.ckeditor.com/4.7.1/full/ckeditor.js"></script>
  		<!-- Google font -->
  		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
  		<!-- Bootstrap -->
- 		<link type="text/css" rel="stylesheet" href="http://localhost/go-online/assets/css/bootstrap.min.css"/>
+ 		<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css"/>
 
  		<!-- Slick -->
- 		<link type="text/css" rel="stylesheet" href="../go-online/assets/css/slick.css"/>
- 		<link type="text/css" rel="stylesheet" href="../go-online/assets/css/slick-theme.css"/>
+ 		<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/css/slick.css"/>
+ 		<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/css/slick-theme.css"/>
 
  		<!-- nouislider -->
- 		<link type="text/css" rel="stylesheet" href="../go-online/assets/css/nouislider.min.css"/>
+ 		<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/css/nouislider.min.css"/>
 
  		<!-- Font Awesome Icon -->
- 		<link rel="stylesheet" href="../go-online/assets/css/font-awesome.min.css">
+ 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/font-awesome.min.css">
 
  		<!-- Custom stlylesheet -->
- 		<link type="text/css" rel="stylesheet" href="../go-online/assets/css/style.css"/>
-    <link type="text/css" rel="stylesheet" href="../go-online/assets/css/style-form.css"/>
+ 		<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/css/animate.min.css"/>
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -51,12 +47,12 @@
 					</ul>
 					<ul class="header-links pull-right">
           <?php if(!$this->session->userdata('login')): ?>
-						<li><a href="<?php echo base_url(); ?>users/login"><i class="fa fa-user "></i> Log in</a></li>
+						<li><a href="#" id="loginLink"><i class="fa fa-user"></i> Log in</a></li>
 						<li><a href="<?php echo base_url(); ?>users/register"><i class= "fa fa-user-o"></i> Register</a></li>
           <?php endif; ?>
           <?php if($this->session->userdata('login')): ?>
-            <li><a href="<?php echo base_url(); ?>users/dashboard"><?php echo $this->session->userdata('username'); ?></a></li>
-            <li><a href="<?php echo base_url(); ?>users/logout"><i class= "fa fa-user-o"></i>Logout</a></li>
+						<li><a href="<?php echo base_url(); ?>users/dashboard"><?php echo $this->session->userdata('username'); ?></a></li>
+						<li><a href="<?php echo base_url(); ?>users/logout"><i class= "fa fa-user-o"></i>Logout</a></li>
          <?php endif; ?>
 					</ul>
 				</div>
@@ -73,7 +69,7 @@
 						<div class="col-md-3">
 							<div class="header-logo">
 								<a href="#" class="logo">
-									<img src="assets/img/go_online_logo2.png" alt="">
+									<img src="<?php echo base_url(); ?>assets/img/go_online_logo2.png" alt="">
 								</a>
 							</div>
 						</div>
@@ -119,7 +115,7 @@
 										<div class="cart-list">
 											<div class="product-widget">
 												<div class="product-img">
-													<img src="assets/img/product01.png" alt="">
+													<img src="<?php echo base_url(); ?>assets/img/product01.png" alt="">
 												</div>
 												<div class="product-body">
 													<h3 class="product-name"><a href="#">product name goes here</a></h3>
@@ -130,7 +126,7 @@
 
 											<div class="product-widget">
 												<div class="product-img">
-													<img src="assets/img/product02.png" alt="">
+													<img src="<?php echo base_url(); ?>assets/img/product02.png" alt="">
 												</div>
 												<div class="product-body">
 													<h3 class="product-name"><a href="#">product name goes here</a></h3>
@@ -170,12 +166,6 @@
 			<!-- /MAIN HEADER -->
 		</header>
 		<!-- /HEADER -->
-
-
-
-
-
-
 
   <div class="container">
 
