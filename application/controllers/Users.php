@@ -6,6 +6,7 @@
 		{
 			parent::__construct();
 			$this->load->model('User_Model');
+			$this->load->model('Administrator_Model');
 			$this->load->library('session');
 			$this->load->library('form_validation');
 		}
@@ -171,4 +172,6 @@
 				return false;
 			}
 		}
+
 	}
+	

@@ -249,6 +249,20 @@
 			return $query->result_array();
 		}
 
+		public function get_products_with_images()
+		{
+			$this->db->select('products.*, product_images.file_name');
+			$this->db->from('products');
+			$this->db->join('product_images', 'products.id = product_images.product_id', 'left');
+			$query = $this->db->get();
+
+			var_dump($query);
+			return $query->result_array();
+			
+		}
+
+
+
 		public function update_products_data($post_image)
 		{
 			$data = array('name' => $this->input->post('name'), 

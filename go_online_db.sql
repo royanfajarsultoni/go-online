@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2023 at 01:49 PM
+-- Generation Time: May 31, 2023 at 10:03 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -43,10 +43,11 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`id`, `name`, `user_id`, `type`, `status`, `created_at`) VALUES
 (1, 'Technical', 1, 'blog', 0, '2017-07-31 15:03:14'),
 (2, 'Business', 1, 'blog', 0, '2017-07-31 15:03:14'),
-(4, 'T-Shirts', 3, 'product', 1, '2017-08-10 14:49:47'),
-(5, 'Shirts', 3, 'product', 1, '2017-08-10 14:51:38'),
 (6, 'FAQ Category Onee', 1, 'faq', 1, '2017-08-14 15:00:07'),
-(7, 'FAQ Category two', 1, 'faq', 1, '2017-08-14 15:11:39');
+(7, 'FAQ Category two', 1, 'faq', 1, '2017-08-14 15:11:39'),
+(8, 'Sayur Mayur', 1, 'product', 1, '2023-05-31 01:33:57'),
+(9, 'Buah-buahan', 1, 'product', 1, '2023-05-31 01:34:17'),
+(10, 'Bubuk Minuman', 1, 'product', 1, '2023-05-31 01:34:30');
 
 -- --------------------------------------------------------
 
@@ -215,8 +216,9 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `user_id`, `cat_id`, `sku`, `name`, `quantity`, `price`, `save_price`, `color`, `image`, `img_alt_tag`, `short_description`, `description`, `tag`, `size`, `datetime`, `status`, `meta_title`, `meta_tag`, `meta_desc`) VALUES
-(1, 1, 0, 'GSS34523', '', '', '', '', '', '', '', '', '', '', '', '2017-08-14 20:51:39', 0, '', '', ''),
-(2, 1, 5, 'ABC123', 'Dressing table', '12', '2999', '1', 'RED', 'bd2_6f5_636_330-1-original.jpg', '', 'Dressing table', '<p>Dressing table</p>\r\n', 'Woodland White Tshirts', 'medium', '2017-08-16 23:33:26', 1, '', '', '');
+(3, 1, 8, '11234', 'Sayur Kangkung (Per Ikat)', '1000', '5000', '5000', '', 'Kangkung-2.jpeg', '', '', '<p>Produksi Kangkung Organik dari kecamatan \"X\"</p>\r\n', '', '', '2023-05-31 04:17:17', 1, '', '', ''),
+(4, 1, 10, '11235', 'Sayur Wortel (Per Kg)', '1000', '5000', '5000', '', 'Wortel-2.jpg', '', 'Sayur Wortel Organik asli Bojonegoro', '<p><strong>Sayur Wortel Organik asli Bojonegoro</strong></p>\r\n\r\n<p><strong>Diproduksi dari Kecamatan \"X\"</strong></p>\r\n', '', '', '2023-05-31 09:54:35', 1, '', '', ''),
+(5, 1, 0, '11236', 'Apel Hijau', '1000', '5000', '5000', '', 'apel-1.jpg', '', 'Buah Apel Organik Asli Bojonegoro', '<p>Buah Apel Organik Asli Bojonegoro<strong>&nbsp;</strong></p>\r\n\r\n<p><strong>Dipanen dari Kecamatan &quot;X&quot;</strong></p>\r\n', '', '', '2023-05-31 09:57:37', 1, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -235,14 +237,9 @@ CREATE TABLE `product_images` (
 --
 
 INSERT INTO `product_images` (`id`, `product_id`, `file_name`) VALUES
-(6, 1, 'tshirts2.jpg'),
-(7, 1, 'tshirt.jpg'),
-(8, 1, 'imagesaaaa.jpg'),
-(9, 1, 'imagesaa.jpg'),
-(10, 2, 'bd2_6f5_636_330-1-original.jpg'),
-(11, 2, 'command.png'),
-(12, 2, 'yyyy.jpg'),
-(13, 2, 'yy.jpg');
+(14, 3, 'Kangkung-1.jpg'),
+(15, 4, 'Wortel-1.jpg'),
+(16, 5, 'apel-2.jpg');
 
 -- --------------------------------------------------------
 
@@ -410,8 +407,6 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `username`, `contact`, `address`, `gender`, `image`, `role_id`, `zipcode`, `dob`, `status`, `register_date`) VALUES
 (1, 'Administrator', 'bdoge132@gmail.com', '56a684e0acd5a3bd7ac59a5bab478484', 'Royan Cilek', '081339278195', 'Admin Cilek', 'Male', '2b924f.jpeg', 1, '23232', '2001-08-16', 1, '2023-05-20 21:04:41'),
-(4, 'Yadu nandan', 'ynandan55@yahoo.com', 'f925916e2754e5e03f75dd58a5733251', 'yadu123', '9898989898', 'durga nagar asas', 'Male', 'slide_05.jpg', 2, '23232', '1990-08-03', 1, '2017-08-09 18:49:15'),
-(8, 'Astha Sharma', 'itech1694astha@gmail.com', 'f925916e2754e5e03f75dd58a5733251', 'astha123', '9898989898', 'Tikamgarh', 'Female', 'bd2_6f5_636_330-1-original.jpg', 2, '454545', '1990-08-03', 1, '2017-08-09 18:51:06'),
 (9, 'Royan Fajar Sultoni', '20081010175@student.upnjatim.ac.id', '827ccb0eea8a706c4c34a16891f84e7b', 'royan2022', '', '', '', '', 0, '61212', '', 0, '2023-05-27 09:14:46');
 
 --
@@ -518,7 +513,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `comments`
@@ -554,13 +549,13 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `product_images`
 --
 ALTER TABLE `product_images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `sco`
