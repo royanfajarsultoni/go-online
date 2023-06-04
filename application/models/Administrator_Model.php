@@ -249,16 +249,17 @@
 			return $query->result_array();
 		}
 
-		public function get_products_with_images()
+		public function get_product_with_image($product_id)
 		{
-			$this->db->select('products.*, product_images.file_name');
+			$this->db->select('products.image, product_images.file_name');
 			$this->db->from('products');
 			$this->db->join('product_images', 'products.id = product_images.product_id', 'left');
+			$this->db->where('products.id', $product_id);
 			$query = $this->db->get();
 
-			var_dump($query);
+			echo $this->db->last_query();
+
 			return $query->result_array();
-			
 		}
 
 

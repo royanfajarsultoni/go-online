@@ -20,7 +20,7 @@
 
 		public function viewProducts()
 		{
-			$data['products'] = $this->Administrator_Model->get_products_with_images(); // Panggil fungsi get_products_with_images() dari model Administrator_Model
+			$data['products'] = $this->Administrator_Model->get_products_with_images(1); // Panggil fungsi get_products_with_images() dari model Administrator_Model
 			
 			// Panggil view user dan kirimkan data produk
 			$this->load->view('templates/header');

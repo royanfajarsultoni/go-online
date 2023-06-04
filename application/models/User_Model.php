@@ -6,7 +6,7 @@
 						  'email' => $this->input->post('email'),
 						  'password' => $encrypt_password,
 						  'username' => $this->input->post('username'),
-						  'zipcode' => $this->input->post('zipcode')
+						  'notelp' => $this->input->post('notelp')
 						  );
 
 			return $this->db->insert('users', $data);

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 31, 2023 at 10:03 AM
+-- Generation Time: Jun 04, 2023 at 04:47 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -395,7 +395,7 @@ CREATE TABLE `users` (
   `gender` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
   `role_id` int(11) NOT NULL,
-  `zipcode` varchar(255) NOT NULL,
+  `notelp` varchar(255) NOT NULL,
   `dob` varchar(255) NOT NULL,
   `status` int(11) NOT NULL,
   `register_date` timestamp NOT NULL DEFAULT current_timestamp()
@@ -405,9 +405,10 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `username`, `contact`, `address`, `gender`, `image`, `role_id`, `zipcode`, `dob`, `status`, `register_date`) VALUES
-(1, 'Administrator', 'bdoge132@gmail.com', '56a684e0acd5a3bd7ac59a5bab478484', 'Royan Cilek', '081339278195', 'Admin Cilek', 'Male', '2b924f.jpeg', 1, '23232', '2001-08-16', 1, '2023-05-20 21:04:41'),
-(9, 'Royan Fajar Sultoni', '20081010175@student.upnjatim.ac.id', '827ccb0eea8a706c4c34a16891f84e7b', 'royan2022', '', '', '', '', 0, '61212', '', 0, '2023-05-27 09:14:46');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `username`, `contact`, `address`, `gender`, `image`, `role_id`, `notelp`, `dob`, `status`, `register_date`) VALUES
+(1, 'Administrator', 'bdoge132@gmail.com', '56a684e0acd5a3bd7ac59a5bab478484', 'Royan Cilek', '081339278195', 'Admin Cilek', 'Male', '2b924f.jpeg', 1, '08133927815', '2001-08-16', 1, '2023-05-20 21:04:41'),
+(9, 'Royan Fajar Sultoni', '20081010175@student.upnjatim.ac.id', '827ccb0eea8a706c4c34a16891f84e7b', 'royan2022', '', '', '', '', 0, '081339278195', '', 0, '2023-05-27 09:14:46'),
+(10, 'Testing1', 'test@gmail.com', '8a9fbc7aad8b6562ff0750246d569d4a', 'Test1', '', '', '', '', 0, '081339278195', '', 0, '2023-06-04 14:45:34');
 
 --
 -- Indexes for dumped tables
@@ -597,7 +598,7 @@ ALTER TABLE `testimonials`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -8,7 +8,7 @@ $(document).ready(function() {
     
       // Mengirim data login ke endpoint yang ditentukan
       $.ajax({
-        url: '<?php echo base_url(); ?>users/login', // Ubah URL sesuai dengan endpoint yang menangani proses login
+        url: 'users/login', // Ubah URL sesuai dengan endpoint yang menangani proses login
         method: 'POST',
         data: {username: username, password: password},
         success: function(response) {
@@ -38,7 +38,7 @@ $(document).ready(function() {
   
       // Menggunakan AJAX untuk memuat konten form login
       $.ajax({
-        url: '<?php echo base_url(); ?>users/login', // Ubah URL sesuai dengan endpoint yang menampilkan form login
+        url: 'users/login', // Ubah URL sesuai dengan endpoint yang menampilkan form login
         method: 'GET',
         success: function(response) {
           // Menampilkan konten form login sebagai popup
