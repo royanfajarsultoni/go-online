@@ -9,16 +9,16 @@
             <h4 class="modal-title">Login</h4>
           </div>
           <div class="modal-body">
-            <?php echo form_open('<?php echo base_url(); ?>users/login', ['id' => 'loginForm']); ?>
+            <?php echo form_open(base_url('users/login'), ['id' => 'loginForm']); ?>
               <div class="form-group">
-                <input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
+                <input type="text" name="username" id="username" class="form-control" placeholder="Username" required autofocus>
               </div>
               <div class="form-group">
-                <input type="password" class="form-control" name="password" placeholder="Password" required>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
               </div>
               <div class="form-group">
                 <div class="input-group">
-                  <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required>
+                  <input type="password" class="form-control" name="confirm_password" id="confpassword" placeholder="Confirm Password" required>
                   <span class="input-group-addon toggle-password"><i class="fa fa-eye-slash"></i></span>
                 </div>
               </div>
@@ -29,7 +29,7 @@
               </div>
             <?php echo form_close(); ?>
           </div>
-          <p class="text-center">Tidak Punya Akun? <a href="#">Registrasi disini</a></p>
+          <p class="text-center"><a href="#" id="loginLink">Login</a></p>
           <div class="modal-footer">
             <button type="button" class="btn btn-success" id="loginButton">Login</button>
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

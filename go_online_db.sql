@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2023 at 04:47 PM
+-- Generation Time: Jun 10, 2023 at 01:32 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -47,7 +47,8 @@ INSERT INTO `categories` (`id`, `name`, `user_id`, `type`, `status`, `created_at
 (7, 'FAQ Category two', 1, 'faq', 1, '2017-08-14 15:11:39'),
 (8, 'Sayur Mayur', 1, 'product', 1, '2023-05-31 01:33:57'),
 (9, 'Buah-buahan', 1, 'product', 1, '2023-05-31 01:34:17'),
-(10, 'Bubuk Minuman', 1, 'product', 1, '2023-05-31 01:34:30');
+(10, 'Bubuk Minuman', 1, 'product', 1, '2023-05-31 01:34:30'),
+(11, 'Serealia', 1, 'product', 1, '2023-06-10 11:25:42');
 
 -- --------------------------------------------------------
 
@@ -217,8 +218,10 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `user_id`, `cat_id`, `sku`, `name`, `quantity`, `price`, `save_price`, `color`, `image`, `img_alt_tag`, `short_description`, `description`, `tag`, `size`, `datetime`, `status`, `meta_title`, `meta_tag`, `meta_desc`) VALUES
 (3, 1, 8, '11234', 'Sayur Kangkung (Per Ikat)', '1000', '5000', '5000', '', 'Kangkung-2.jpeg', '', '', '<p>Produksi Kangkung Organik dari kecamatan \"X\"</p>\r\n', '', '', '2023-05-31 04:17:17', 1, '', '', ''),
-(4, 1, 10, '11235', 'Sayur Wortel (Per Kg)', '1000', '5000', '5000', '', 'Wortel-2.jpg', '', 'Sayur Wortel Organik asli Bojonegoro', '<p><strong>Sayur Wortel Organik asli Bojonegoro</strong></p>\r\n\r\n<p><strong>Diproduksi dari Kecamatan \"X\"</strong></p>\r\n', '', '', '2023-05-31 09:54:35', 1, '', '', ''),
-(5, 1, 0, '11236', 'Apel Hijau', '1000', '5000', '5000', '', 'apel-1.jpg', '', 'Buah Apel Organik Asli Bojonegoro', '<p>Buah Apel Organik Asli Bojonegoro<strong>&nbsp;</strong></p>\r\n\r\n<p><strong>Dipanen dari Kecamatan &quot;X&quot;</strong></p>\r\n', '', '', '2023-05-31 09:57:37', 1, '', '', '');
+(4, 1, 8, '11235', 'Sayur Wortel (Per Kg)', '1000', '5000', '5000', '', 'Wortel-2.jpg', '', 'Sayur Wortel Organik asli Bojonegoro', '<p><strong>Sayur Wortel Organik asli Bojonegoro</strong></p>\r\n\r\n<p><strong>Diproduksi dari Kecamatan \"X\"</strong></p>\r\n', '', '', '2023-05-31 09:54:35', 1, '', '', ''),
+(5, 1, 9, '11236', 'Apel Hijau', '1000', '5000', '5000', '', 'apel-1.jpg', '', 'Buah Apel Organik Asli Bojonegoro', '<p>Buah Apel Organik Asli Bojonegoro<strong>&nbsp;</strong></p>\r\n\r\n<p><strong>Dipanen dari Kecamatan &quot;X&quot;</strong></p>\r\n', '', '', '2023-05-31 09:57:37', 1, '', '', ''),
+(6, 1, 8, '11237', 'Cabai Rawit', '1000', '11000', '7000', '', 'varwwwhtmldinkescommonupload88Manfaat-Cabai.jpg', '', 'Cabe Rawit Organik Asli Bojonegoro', '<p>LOMBOK CILIK</p>\r\n', '', '', '2023-06-10 13:25:26', 1, '', '', ''),
+(7, 1, 11, '11238', 'Beras (Per Kg)', '1000', '12500', '5000', '', 'Screenshot_23.jpg', '', 'Beras Organik asli Bojonegoro', '<p>beras blokkk</p>\r\n', '', '', '2023-06-10 13:26:42', 1, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -514,7 +517,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `comments`
@@ -550,7 +553,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `product_images`

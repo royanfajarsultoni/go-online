@@ -41,9 +41,9 @@
 			<div style="background-color: #006410;" id="top-header">
 				<div class="container">
 					<ul class="header-links pull-left">
-						<li><a href="<?php echo base_url(); ?>"><i class="fa fa-phone"></i> Go-Online</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
+						<li><a href="<?php echo base_url(); ?>"><i class="fa fa-globe"></i> Go-Online</a></li>
+						<!-- <li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li> -->
 					</ul>
 					<ul class="header-links pull-right">
           <?php if(!$this->session->userdata('login')): ?>

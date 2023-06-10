@@ -249,18 +249,17 @@
 			return $query->result_array();
 		}
 
-		public function get_product_with_image($product_id)
+		public function get_products_with_images()
 		{
-			$this->db->select('products.image, product_images.file_name');
+			$this->db->select('products.image, product_images.file_name, categories.name AS category_name, products.name AS product_name, products.price, products.save_price');
 			$this->db->from('products');
 			$this->db->join('product_images', 'products.id = product_images.product_id', 'left');
-			$this->db->where('products.id', $product_id);
+			$this->db->join('categories', 'categories.id = products.cat_id', 'left');
 			$query = $this->db->get();
-
-			echo $this->db->last_query();
 
 			return $query->result_array();
 		}
+
 
 
 

@@ -13,21 +13,13 @@
 				show_404();
 			}
 			$data['title'] = ucfirst($page);
+			$data2['products'] = $this->Administrator_Model->get_products_with_images(); // Panggil fungsi get_products_with_images() dari model Administrator_Model
+			$data3['products_2'] = $this->Administrator_Model->get_products();
+
 			$this->load->view('templates/header');
-			$this->load->view('pages/'.$page, $data);
+			$this->load->view('pages/'.$page, $data2, $data3);
 			$this->load->view('templates/footer');
 		}
 
-		public function viewProducts()
-		{
-			$data['products'] = $this->Administrator_Model->get_products_with_images(1); // Panggil fungsi get_products_with_images() dari model Administrator_Model
-			
-			// Panggil view user dan kirimkan data produk
-			$this->load->view('templates/header');
-			$this->load->view('pages/home', $data);
-			$this->load->view('templates/footer');
-			
-			var_dump($data['products']);
-		}
 	}
 	
