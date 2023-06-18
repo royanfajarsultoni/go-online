@@ -251,7 +251,14 @@
 
 		public function get_products_with_images()
 		{
-			$this->db->select('products.image, product_images.file_name, categories.name AS category_name, products.name AS product_name, products.price, products.save_price');
+			$this->db->select('products.image, 
+			product_images.file_name, 
+			categories.name AS category_name, 
+			products.name AS product_name, 
+			products.price, 
+			products.save_price'
+			);
+
 			$this->db->from('products');
 			$this->db->join('product_images', 'products.id = product_images.product_id', 'left');
 			$this->db->join('categories', 'categories.id = products.cat_id', 'left');
@@ -260,8 +267,14 @@
 			return $query->result_array();
 		}
 
-
-
+		public function getDistinctCategories() {
+			$this->db->distinct();
+			$this->db->select('categories.name');
+			$this->db->from('products');
+			$this->db->join('categories', 'categories.id = products.cat_id');
+			$query = $this->db->get();
+			return $query->result();
+		}
 
 		public function update_products_data($post_image)
 		{

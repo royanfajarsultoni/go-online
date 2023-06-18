@@ -19,19 +19,21 @@
 							</div>
 						</div>
 
-						<div class="col-md-3 col-xs-6">
-							<div class="footer">
-								<h3 class="footer-title">Categories</h3>
-								<ul class="footer-links">
-									<li><a href="#">Sayur-Sayuran</a></li>
-									<li><a href="#">Buah-Buahan</a></li>
-									<li><a href="#">Umbi-Umbian</a></li>
-									<li><a href="#">Kacang-Kacangan</a></li>
-									<li><a href="#">Serealia</a></li>
-								</ul>
+							<div class="col-md-3 col-xs-6">
+								<div class="footer">
+									<h3 class="footer-title">Categories</h3>
+									<?php foreach ($categories as $category): ?>
+										<ul class="footer-links">
+											<li<?php echo ($selectedCategory === $category->name) ? ' class="active"' : ''; ?>>
+												<a href="<?php echo base_url('pages/view?category=' . urlencode($category->name)); ?>">
+													<?php echo $category->name; ?>
+												</a>
+											</li>
+										</ul>
+									<?php endforeach; ?>
+								</div>
 							</div>
-						</div>
-
+						
 						<div class="clearfix visible-xs"></div>
 
 						<div class="col-md-3 col-xs-6">
