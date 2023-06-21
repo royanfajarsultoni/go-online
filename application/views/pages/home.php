@@ -6,7 +6,7 @@
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="<?php echo base_url()?>">Home</a></li>
+						<li><a href="<?php echo base_url()?>">Home</a></li>
 						<?php foreach ($categories as $category): ?>
 							<li<?php echo ($selectedCategory === $category->name) ? ' class="active"' : ''; ?>>
 								<a href="<?php echo base_url('pages/view?category=' . urlencode($category->name)); ?>">
@@ -32,12 +32,18 @@
 						<!-- product -->
 						<?php foreach ($products as $product) : ?>
 						<div class="col-md-3 col-xs-6">
-							<a href="<?php echo site_url('pages/viewdetail')?>">
 								<div class="product">
+								<?php
+									if ($product) {
+										echo '<a href="'.base_url('detail-product/'.$product['id']). '"></a>';
+									} else {
+										echo 'Produk tidak ditemukan';
+									}
+								?>
 									<div class="product-img">
 										<img src="<?php echo base_url('assets/images/products/' . $product['image']); ?>" alt="">
 										<div class="product-label">
-											<span class="sale">-30%</span>
+											<span class="sale">NEW</span>
 										</div>
 									</div>
 									<div class="product-body">
@@ -68,8 +74,6 @@
 				<!-- /container -->
 			</div>
 		<!-- /Section -->
-
-
 
 		<!-- NEWSLETTER -->
 		<div id="newsletter" class="section">

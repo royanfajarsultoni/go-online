@@ -31,16 +31,30 @@
 			$this->load->view('templates/footer');
 		}
 		
-		public function viewdetail($page = 'detail-product') {
-			if (!file_exists(APPPATH.'views/pages/'.$page.'.php')) {
-				show_404();
-			}
+		// public function viewdetail($page = 'detail-product') {
+		// 	if (!file_exists(APPPATH.'views/pages/'.$page.'.php')) {
+		// 		show_404();
+		// 	}
 		
-			$data['title'] = ucfirst($page);
-			// $data['product_id'] = $id; // Menyimpan nilai id produk
+		// 	$data['title'] = ucfirst($page);
+		// 	// $data['product_id'] = $id; // Menyimpan nilai id produk
 		
+		// 	$this->load->view('templates/header');
+		// 	$this->load->view('pages/'.$page, $data);
+		// 	$this->load->view('templates/footer');
+		// }
+
+		public function view_detail($id) {
+			// Memuat model produk
+			$this->load->model('Administrator_Model');
+
+			// Mengambil data produk berdesarkan $id dari database
+			$product = $this->Administrator_Model->get_products($id);
+
+			$dataproduct['product'] = $product;
+
 			$this->load->view('templates/header');
-			$this->load->view('pages/'.$page, $data);
+			$this->load->view('detail-product/', $dataproduct);
 			$this->load->view('templates/footer');
 		}
 
