@@ -173,5 +173,15 @@
 			}
 		}
 
+		// public function searchProduct() {
+		// 	$searchTerm = $this->input->get('search'); // Mengambil nilai pencarian dari query string
+		
+		// 	// Panggil model untuk melakukan pencarian produk berdasarkan nama
+		// 	$data['products'] = $this->User_Model->searchProductsByName($searchTerm);
+		
+		// 	// Muat view yang menampilkan hasil pencarian
+		// 	$this->load->view('pages/home', $data);
+		// }
+
 	}
 	

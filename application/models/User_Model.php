@@ -66,12 +66,9 @@
 			return $this->db->update('users', $data);
 		}
 
-		// public function get_products_with_images()
-		// {
-		// 	$this->db->select('*');
-		// 	$this->db->from('products');
-		// 	$this->db->join('product_images', 'products.id = product_images.product_id', 'left');
-		// 	$query = $this->db->get();
-		// 	return $query->result_array();
-		// }
+		public function searchProductsByName($searchTerm) {
+			$this->db->like('name', $searchTerm); // Melakukan pencocokan sebagian dengan kolom 'name'
+			$query = $this->db->get('products');
+			return $query->result_array();
+		}
 }
