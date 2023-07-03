@@ -24,33 +24,21 @@ class Pages extends CI_Controller
 			$this->db->where('categories.name', urldecode($selectedCategory));
 		}
 
-		$data['products'] = $this->Administrator_Model->get_products_with_images(); // Panggil fungsi get_products_with_images() dari model Administrator_Model
+		$data['products'] = $this->Administrator_Model->get_products(); 
 		$data['categories'] = $this->Administrator_Model->getDistinctCategories();
-		$data_produk['products'] = $this->Administrator_Model->get_products_by_id($id);
 
 		$this->load->view('templates/header');
-		$this->load->view('pages/' . $page, $data, $data_produk);
+		$this->load->view('pages/' . $page, $data);
 		$this->load->view('templates/footer');
 	}
 
-	// public function viewdetail($page = 'detail-product') {
-	// 	if (!file_exists(APPPATH.'views/pages/'.$page.'.php')) {
-	// 		show_404();
-	// 	}
-
-	// 	$data['title'] = ucfirst($page);
-	// 	// $data['product_id'] = $id; // Menyimpan nilai id produk
-
-	// 	$this->load->view('templates/header');
-	// 	$this->load->view('pages/'.$page, $data);
-	// 	$this->load->view('templates/footer');
-	// }
-
 	public function detailProduct($id)
 	{
-		$data['products'] = $this->Administrator_Model->get_products_by_id($id); // Menggunakan $data['products'] sebagai nama indeks
-		$this->load->view('templates/header');
-		$this->load->view('detail-product/', $data); // Mengubah $data menjadi $data['product']
-		$this->load->view('templates/footer');
+    $product = $this->Administrator_Model->detail_product($id);
+
+    $data['product'] = $product; // Menggunakan array produk langsung
+    $this->load->view('templates/header');
+    $this->load->view('pages/detail-product', $data);
+    $this->load->view('templates/footer');
 	}
 }

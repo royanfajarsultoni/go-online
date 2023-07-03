@@ -16,7 +16,7 @@ $route['posts/delete/(:any)'] = 'posts/delete/$1';
 $route['posts/create'] = 'posts/create';
 $route['posts/(:any)'] = 'posts/view/$1';
 $route['posts'] = 'posts/index';
-$route['detail-product/(:any)'] = 'pages/detailProduct/$1'; // Mengganti 'detailProduk' menjadi 'detailProduct'
+$route['detail-product/(:num)'] = 'pages/detailProduct/$1'; // Mengganti 'detailProduk' menjadi 'detailProduct'
 $route['default_controller'] = 'pages/view';
 
 

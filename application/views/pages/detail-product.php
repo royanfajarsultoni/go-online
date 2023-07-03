@@ -6,11 +6,9 @@
         <div class="row">
             <div class="col-md-12">
                 <ul class="breadcrumb-tree">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">All Categories</a></li>
-                    <li><a href="#">Accessories</a></li>
-                    <li><a href="#">Headphones</a></li>
-                    <li class="active">Product name goes here</li>
+                    <li><a href="../">Home</a></li>
+                    <?php foreach ($product as $prd) : ?>
+                        <li class="active"><?php echo $prd->name; ?></li>
                 </ul>
             </div>
         </div>
@@ -30,19 +28,7 @@
             <div class="col-md-5 col-md-push-2">
                 <div id="product-main-img">
                     <div class="product-preview">
-                        <img src="<?php echo base_url(); ?>assets/img/product01.png" alt="">
-                    </div>
-
-                    <div class="product-preview">
-                        <img src="<?php echo base_url(); ?>assets/img/product03.png" alt="">
-                    </div>
-
-                    <div class="product-preview">
-                        <img src="<?php echo base_url(); ?>assets/img/product06.png" alt="">
-                    </div>
-
-                    <div class="product-preview">
-                        <img src="<?php echo base_url(); ?>assets/img/product08.png" alt="">
+                        
                     </div>
                 </div>
             </div>
@@ -73,7 +59,7 @@
             <!-- Product details -->
             <div class="col-md-5">
                 <div class="product-details">
-                    <h2 class="product-name">product name goes here</h2>
+                    <h2 class="product-name"><?php echo $prd->name; ?></h2>
                     <div>
                         <div class="product-rating">
                             <i class="fa fa-star"></i>
@@ -85,20 +71,20 @@
                         <a class="review-link" href="#">10 Review(s) | Add your review</a>
                     </div>
                     <div>
-                        <h3 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h3>
+                        <h3 class="product-price">Rp.<?php echo $prd->save_price; ?><del class="product-old-price"><?php echo $prd->price; ?></del></h3>
                         <span class="product-available">In Stock</span>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p><?php echo $prd->short_description; ?></p>
 
                     <div class="add-to-cart">
-                        <div class="qty-label">
+                        <!-- <div class="qty-label">
                             Qty
                             <div class="input-number">
                                 <input type="number">
                                 <span class="qty-up">+</span>
                                 <span class="qty-down">-</span>
                             </div>
-                        </div>
+                        </div> -->
                         <button class="add-to-cart-btn"><i class="fa fa-phone"></i> hubungi penjual</button>
                     </div>
 
@@ -112,14 +98,7 @@
                         <li><a href="#">Headphones</a></li>
                         <li><a href="#">Accessories</a></li>
                     </ul>
-
-                    <ul class="product-links">
-                        <li>Share:</li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-envelope"></i></a></li>
-                    </ul>
+                    <?php endforeach; ?>
                 </div>
             </div>
             <!-- /Product details -->
