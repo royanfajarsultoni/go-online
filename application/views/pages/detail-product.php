@@ -90,7 +90,6 @@
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
-
                     <div class="add-to-cart">
                         <div class="qty-label">
                             Qty
@@ -121,7 +120,6 @@
                         <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                         <li><a href="#"><i class="fa fa-envelope"></i></a></li>
                     </ul>
-
                 </div>
             </div>
             <!-- /Product details -->

@@ -231,11 +231,16 @@
 			return $query->row_array();
 		}
 
-		public function get_produts_by_id($id)
+		public function get_products_by_id($id)
 		{
-			$query = $this->db->get('products');
-			return $query->result_array();
-		}
+			$query = $this->db->get_where('products', array('id' => $id));
+		
+			if ($query->num_rows() === 1) {
+				return $query->row();
+			} else {
+				return null;
+			}
+		}		
 
 		public function update_products($id = FALSE)
 		{

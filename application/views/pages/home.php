@@ -8,7 +8,7 @@
 					<ul class="main-nav nav navbar-nav">
 						<li><a href="<?php echo base_url()?>">Home</a></li>
 						<?php foreach ($categories as $category): ?>
-							<li<?php echo ($selectedCategory === $category->name) ? ' class="active"' : ''; ?>>
+							<li <?php echo ($selectedCategory === $category->name) ? ' class="active"' : ''; ?>>
 								<a href="<?php echo base_url('pages/view?category=' . urlencode($category->name)); ?>">
 									<?php echo $category->name; ?>
 								</a>
@@ -33,13 +33,6 @@
 						<?php foreach ($products as $product) : ?>
 						<div class="col-md-3 col-xs-6">
 								<div class="product">
-								<?php
-									if ($product) {
-										echo '<a href="'.base_url('detail-product/'.$product['id']). '"></a>';
-									} else {
-										echo 'Produk tidak ditemukan';
-									}
-								?>
 									<div class="product-img">
 										<img src="<?php echo base_url('assets/images/products/' . $product['image']); ?>" alt="">
 										<div class="product-label">
@@ -61,7 +54,9 @@
 										</div>
 									</div>
 									<div class="add-to-cart">
-										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+										<?php echo anchor('detail-product/' . $product['id'], 
+											'<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>'); 
+										?>
 									</div>
 								</div>
 							</a>
