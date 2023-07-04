@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2023 at 01:32 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 7.4.33
+-- Waktu pembuatan: 03 Jul 2023 pada 12.09
+-- Versi server: 10.4.27-MariaDB
+-- Versi PHP: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Struktur dari tabel `categories`
 --
 
 CREATE TABLE `categories` (
@@ -37,7 +37,7 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `categories`
+-- Dumping data untuk tabel `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`, `user_id`, `type`, `status`, `created_at`) VALUES
@@ -53,7 +53,21 @@ INSERT INTO `categories` (`id`, `name`, `user_id`, `type`, `status`, `created_at
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comments`
+-- Struktur dari tabel `chats`
+--
+
+CREATE TABLE `chats` (
+  `id` int(11) NOT NULL,
+  `sender_id` int(11) NOT NULL,
+  `receiver_id` int(11) NOT NULL,
+  `message` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `comments`
 --
 
 CREATE TABLE `comments` (
@@ -68,7 +82,7 @@ CREATE TABLE `comments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `comments`
+-- Dumping data untuk tabel `comments`
 --
 
 INSERT INTO `comments` (`id`, `post_id`, `username`, `email`, `comment`, `comment_type`, `status`, `created_at`) VALUES
@@ -77,7 +91,7 @@ INSERT INTO `comments` (`id`, `post_id`, `username`, `email`, `comment`, `commen
 -- --------------------------------------------------------
 
 --
--- Table structure for table `faqs`
+-- Struktur dari tabel `faqs`
 --
 
 CREATE TABLE `faqs` (
@@ -90,7 +104,7 @@ CREATE TABLE `faqs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `faqs`
+-- Dumping data untuk tabel `faqs`
 --
 
 INSERT INTO `faqs` (`id`, `faq_cat_id`, `question`, `answer`, `datetime`, `status`) VALUES
@@ -99,7 +113,7 @@ INSERT INTO `faqs` (`id`, `faq_cat_id`, `question`, `answer`, `datetime`, `statu
 -- --------------------------------------------------------
 
 --
--- Table structure for table `galleries`
+-- Struktur dari tabel `galleries`
 --
 
 CREATE TABLE `galleries` (
@@ -110,7 +124,7 @@ CREATE TABLE `galleries` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `galleries`
+-- Dumping data untuk tabel `galleries`
 --
 
 INSERT INTO `galleries` (`id`, `name`, `file_name`, `created_at`) VALUES
@@ -134,7 +148,7 @@ INSERT INTO `galleries` (`id`, `name`, `file_name`, `created_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `page_content`
+-- Struktur dari tabel `page_content`
 --
 
 CREATE TABLE `page_content` (
@@ -146,7 +160,7 @@ CREATE TABLE `page_content` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `page_content`
+-- Dumping data untuk tabel `page_content`
 --
 
 INSERT INTO `page_content` (`id`, `page_name`, `content`, `datetime`, `updated_datetime`) VALUES
@@ -158,7 +172,7 @@ INSERT INTO `page_content` (`id`, `page_name`, `content`, `datetime`, `updated_d
 -- --------------------------------------------------------
 
 --
--- Table structure for table `posts`
+-- Struktur dari tabel `posts`
 --
 
 CREATE TABLE `posts` (
@@ -174,7 +188,7 @@ CREATE TABLE `posts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `posts`
+-- Dumping data untuk tabel `posts`
 --
 
 INSERT INTO `posts` (`id`, `title`, `slug`, `category_id`, `user_id`, `post_image`, `body`, `status`, `created_at`) VALUES
@@ -186,7 +200,7 @@ INSERT INTO `posts` (`id`, `title`, `slug`, `category_id`, `user_id`, `post_imag
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Struktur dari tabel `products`
 --
 
 CREATE TABLE `products` (
@@ -213,7 +227,7 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `products`
+-- Dumping data untuk tabel `products`
 --
 
 INSERT INTO `products` (`id`, `user_id`, `cat_id`, `sku`, `name`, `quantity`, `price`, `save_price`, `color`, `image`, `img_alt_tag`, `short_description`, `description`, `tag`, `size`, `datetime`, `status`, `meta_title`, `meta_tag`, `meta_desc`) VALUES
@@ -226,7 +240,7 @@ INSERT INTO `products` (`id`, `user_id`, `cat_id`, `sku`, `name`, `quantity`, `p
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product_images`
+-- Struktur dari tabel `product_images`
 --
 
 CREATE TABLE `product_images` (
@@ -236,7 +250,7 @@ CREATE TABLE `product_images` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `product_images`
+-- Dumping data untuk tabel `product_images`
 --
 
 INSERT INTO `product_images` (`id`, `product_id`, `file_name`) VALUES
@@ -247,7 +261,7 @@ INSERT INTO `product_images` (`id`, `product_id`, `file_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sco`
+-- Struktur dari tabel `sco`
 --
 
 CREATE TABLE `sco` (
@@ -259,7 +273,7 @@ CREATE TABLE `sco` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `sco`
+-- Dumping data untuk tabel `sco`
 --
 
 INSERT INTO `sco` (`id`, `page_name`, `title`, `keywords`, `description`) VALUES
@@ -273,7 +287,7 @@ INSERT INTO `sco` (`id`, `page_name`, `title`, `keywords`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `site_config`
+-- Struktur dari tabel `site_config`
 --
 
 CREATE TABLE `site_config` (
@@ -284,7 +298,7 @@ CREATE TABLE `site_config` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `site_config`
+-- Dumping data untuk tabel `site_config`
 --
 
 INSERT INTO `site_config` (`id`, `site_name`, `logo_img`, `site_title`) VALUES
@@ -293,7 +307,7 @@ INSERT INTO `site_config` (`id`, `site_name`, `logo_img`, `site_title`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sliders_img`
+-- Struktur dari tabel `sliders_img`
 --
 
 CREATE TABLE `sliders_img` (
@@ -305,7 +319,7 @@ CREATE TABLE `sliders_img` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `sliders_img`
+-- Dumping data untuk tabel `sliders_img`
 --
 
 INSERT INTO `sliders_img` (`id`, `title`, `description`, `image`, `status`) VALUES
@@ -314,7 +328,7 @@ INSERT INTO `sliders_img` (`id`, `title`, `description`, `image`, `status`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sociallinks`
+-- Struktur dari tabel `sociallinks`
 --
 
 CREATE TABLE `sociallinks` (
@@ -324,7 +338,7 @@ CREATE TABLE `sociallinks` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `sociallinks`
+-- Dumping data untuk tabel `sociallinks`
 --
 
 INSERT INTO `sociallinks` (`id`, `social_name`, `link`) VALUES
@@ -337,7 +351,7 @@ INSERT INTO `sociallinks` (`id`, `social_name`, `link`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `teams`
+-- Struktur dari tabel `teams`
 --
 
 CREATE TABLE `teams` (
@@ -351,7 +365,7 @@ CREATE TABLE `teams` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `teams`
+-- Dumping data untuk tabel `teams`
 --
 
 INSERT INTO `teams` (`id`, `name`, `designation`, `description`, `image`, `status`, `created_at`) VALUES
@@ -360,7 +374,7 @@ INSERT INTO `teams` (`id`, `name`, `designation`, `description`, `image`, `statu
 -- --------------------------------------------------------
 
 --
--- Table structure for table `testimonials`
+-- Struktur dari tabel `testimonials`
 --
 
 CREATE TABLE `testimonials` (
@@ -374,7 +388,7 @@ CREATE TABLE `testimonials` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `testimonials`
+-- Dumping data untuk tabel `testimonials`
 --
 
 INSERT INTO `testimonials` (`id`, `name`, `domain`, `description`, `image`, `status`, `created_at`) VALUES
@@ -384,7 +398,7 @@ INSERT INTO `testimonials` (`id`, `name`, `domain`, `description`, `image`, `sta
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -405,7 +419,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `username`, `contact`, `address`, `gender`, `image`, `role_id`, `notelp`, `dob`, `status`, `register_date`) VALUES
@@ -418,187 +432,199 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `username`, `contact`, `
 --
 
 --
--- Indexes for table `categories`
+-- Indeks untuk tabel `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `comments`
+-- Indeks untuk tabel `chats`
+--
+ALTER TABLE `chats`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `comments`
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `faqs`
+-- Indeks untuk tabel `faqs`
 --
 ALTER TABLE `faqs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `galleries`
+-- Indeks untuk tabel `galleries`
 --
 ALTER TABLE `galleries`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `page_content`
+-- Indeks untuk tabel `page_content`
 --
 ALTER TABLE `page_content`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `posts`
+-- Indeks untuk tabel `posts`
 --
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`),
   ADD KEY `category_id` (`category_id`);
 
 --
--- Indexes for table `products`
+-- Indeks untuk tabel `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`),
   ADD KEY `uid` (`user_id`);
 
 --
--- Indexes for table `product_images`
+-- Indeks untuk tabel `product_images`
 --
 ALTER TABLE `product_images`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `sco`
+-- Indeks untuk tabel `sco`
 --
 ALTER TABLE `sco`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `site_config`
+-- Indeks untuk tabel `site_config`
 --
 ALTER TABLE `site_config`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `sliders_img`
+-- Indeks untuk tabel `sliders_img`
 --
 ALTER TABLE `sliders_img`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `sociallinks`
+-- Indeks untuk tabel `sociallinks`
 --
 ALTER TABLE `sociallinks`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `teams`
+-- Indeks untuk tabel `teams`
 --
 ALTER TABLE `teams`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `testimonials`
+-- Indeks untuk tabel `testimonials`
 --
 ALTER TABLE `testimonials`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `categories`
+-- AUTO_INCREMENT untuk tabel `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `comments`
+-- AUTO_INCREMENT untuk tabel `chats`
+--
+ALTER TABLE `chats`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `comments`
 --
 ALTER TABLE `comments`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `faqs`
+-- AUTO_INCREMENT untuk tabel `faqs`
 --
 ALTER TABLE `faqs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `galleries`
+-- AUTO_INCREMENT untuk tabel `galleries`
 --
 ALTER TABLE `galleries`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
--- AUTO_INCREMENT for table `page_content`
+-- AUTO_INCREMENT untuk tabel `page_content`
 --
 ALTER TABLE `page_content`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `posts`
+-- AUTO_INCREMENT untuk tabel `posts`
 --
 ALTER TABLE `posts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT untuk tabel `products`
 --
 ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `product_images`
+-- AUTO_INCREMENT untuk tabel `product_images`
 --
 ALTER TABLE `product_images`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `sco`
+-- AUTO_INCREMENT untuk tabel `sco`
 --
 ALTER TABLE `sco`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `site_config`
+-- AUTO_INCREMENT untuk tabel `site_config`
 --
 ALTER TABLE `site_config`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `sliders_img`
+-- AUTO_INCREMENT untuk tabel `sliders_img`
 --
 ALTER TABLE `sliders_img`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `sociallinks`
+-- AUTO_INCREMENT untuk tabel `sociallinks`
 --
 ALTER TABLE `sociallinks`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `teams`
+-- AUTO_INCREMENT untuk tabel `teams`
 --
 ALTER TABLE `teams`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `testimonials`
+-- AUTO_INCREMENT untuk tabel `testimonials`
 --
 ALTER TABLE `testimonials`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
