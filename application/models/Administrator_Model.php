@@ -242,6 +242,7 @@
 		public function detail_product($id)
 		{
 			$result = $this->db->where('id',$id)->get('products');
+			
 			if($result->num_rows() > 0){
 				return $result->result();
 			} else {
