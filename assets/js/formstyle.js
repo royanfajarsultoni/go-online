@@ -1,28 +1,52 @@
 $(document).ready(function() {
-    $('#loginButton').click(function(e) {
-      e.preventDefault(); // Menghentikan aksi default form submit
-    
-      // Mengambil nilai input username dan password
-      var username = $('#username').val();
-      var password = $('#password').val();
-    
-      // Mengirim data login ke endpoint yang ditentukan
-      $.ajax({
-        url: '<?php echo base_url(); ?>users/login', // Ubah URL sesuai dengan endpoint yang menangani proses login
-        method: 'POST',
-        data: {username: username, password: password},
-        success: function(response) {
-          // Handle the response from the server
-          console.log(response);
-          // You can update the UI or redirect the user as needed
-        },
-        error: function(xhr, status, error) {
-          // Handle any errors that occur during the AJAX request
-          console.log(xhr.responseText);
-        }
-      });
+  $('#loginLink').click(function(e) {
+    e.preventDefault(); // Menghentikan aksi default link
+
+    // Menggunakan AJAX untuk memuat konten form login
+    $.ajax({
+      url: 'users/login', // Ubah URL sesuai dengan endpoint yang menampilkan form login
+      method: 'GET',
+      success: function(response) {
+        // Menampilkan konten form login sebagai popup
+        $('#loginModal').remove(); // Hapus modal sebelumnya jika ada
+        $('body').append(response);
+        $('#loginModal').modal('show');
+      },
+      error: function() {
+        alert('Error loading login form. Please try again.');
+      }
     });
   });
+});
+
+
+$(document).ready(function() {
+  $('#loginButton').click(function(e) {
+    e.preventDefault(); // Menghentikan aksi default form submit
+
+    // Mengambil nilai input username dan password
+    var username = $('#username').val();
+    var password = $('#password').val();
+    var confirmPassword = $('#confpassword').val();
+
+    // Mengirim data login ke endpoint yang ditentukan
+    $.ajax({
+      url: 'users/login', // Ubah URL sesuai dengan endpoint yang menangani proses login
+      method: 'POST',
+      data: {username: username, password: password, confirm_password: confirmPassword},
+      success: function(response) {
+        // Handle the response from the server
+        console.log(response);
+        // You can update the UI or redirect the user as needed
+      },
+      error: function(xhr, status, error) {
+        // Handle any errors that occur during the AJAX request
+        console.log(xhr.responseText);
+      }
+    });
+  });
+});
+
 
 
 function openLoginModal() {
@@ -32,26 +56,7 @@ function openLoginModal() {
   }, 230);
 }
 
-$(document).ready(function() {
-    $('#loginLink').click(function(e) {
-      e.preventDefault(); // Menghentikan aksi default link
-  
-      // Menggunakan AJAX untuk memuat konten form login
-      $.ajax({
-        url: '<?php echo base_url(); ?>users/login', // Ubah URL sesuai dengan endpoint yang menampilkan form login
-        method: 'GET',
-        success: function(response) {
-          // Menampilkan konten form login sebagai popup
-          $('#loginModal').remove(); // Hapus modal sebelumnya jika ada
-          $('body').append(response);
-          $('#loginModal').modal('show');
-        },
-        error: function() {
-          alert('Error loading login form. Please try again.');
-        }
-      });
-    });
-  });
+
 
 function showLoginForm() {
   $('#loginModal .modal-dialog').addClass('animated bounceInDown');

@@ -6,7 +6,7 @@
 						  'email' => $this->input->post('email'),
 						  'password' => $encrypt_password,
 						  'username' => $this->input->post('username'),
-						  'zipcode' => $this->input->post('zipcode')
+						  'notelp' => $this->input->post('notelp')
 						  );
 
 			return $this->db->insert('users', $data);
@@ -64,5 +64,11 @@
 		public function update_profile($user_id, $data) {
 			$this->db->where('id', $user_id);
 			return $this->db->update('users', $data);
+		}
+
+		public function searchProductsByName($searchTerm) {
+			$this->db->like('name', $searchTerm); // Melakukan pencocokan sebagian dengan kolom 'name'
+			$query = $this->db->get('products');
+			return $query->result_array();
 		}
 }

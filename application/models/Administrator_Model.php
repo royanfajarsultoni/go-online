@@ -222,14 +222,62 @@
 
 		public function get_products($id = FALSE)
 		{
-			if($id === FALSE){
-				$query = $this->db->get('products');
-				return $query->result_array(); 
-			}
+			$this->db->select('products.id,
+			products.image,
+			product_images.file_name, 
+			categories.name AS category_name, 
+			products.name AS product_name, 
+			products.price, 
+			products.save_price'
+			);
 
-			$query = $this->db->get_where('products', array('id' => $id));
-			return $query->row_array();
+			$this->db->from('products');
+			$this->db->join('product_images', 'products.id = product_images.product_id', 'left');
+			$this->db->join('categories', 'categories.id = products.cat_id', 'left');
+			$query = $this->db->get();
+
+			return $query->result_array();
 		}
+
+		public function detail_product($id)
+		{
+			$result = $this->db->where('id',$id)->get('products');
+			
+			if($result->num_rows() > 0){
+				return $result->result();
+			} else {
+				return false;
+			}
+		}
+
+		// public function get_products_with_images()
+		// {
+		// 	$this->db->select('products.image, 
+		// 	product_images.file_name, 
+		// 	categories.name AS category_name, 
+		// 	products.name AS product_name, 
+		// 	products.price, 
+		// 	products.save_price'
+		// 	);
+
+		// 	$this->db->from('products');
+		// 	$this->db->join('product_images', 'products.id = product_images.product_id', 'left');
+		// 	$this->db->join('categories', 'categories.id = products.cat_id', 'left');
+		// 	$query = $this->db->get();
+
+		// 	return $query->result_array();
+		// }
+
+		public function get_products_by_id($id)
+		{
+			$query = $this->db->get_where('products', array('id' => $id));
+		
+			if ($query->num_rows() === 1) {
+				return $query->row();
+			} else {
+				return null;
+			}
+		}		
 
 		public function update_products($id = FALSE)
 		{
@@ -247,6 +295,15 @@
 			$this->db->where('product_id', $productId);
 			$query = $this->db->get('product_images');
 			return $query->result_array();
+		}
+
+		public function getDistinctCategories() {
+			$this->db->distinct();
+			$this->db->select('categories.name');
+			$this->db->from('products');
+			$this->db->join('categories', 'categories.id = products.cat_id');
+			$query = $this->db->get();
+			return $query->result();
 		}
 
 		public function update_products_data($post_image)

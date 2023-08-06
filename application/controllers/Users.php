@@ -6,6 +6,7 @@
 		{
 			parent::__construct();
 			$this->load->model('User_Model');
+			$this->load->model('Administrator_Model');
 			$this->load->library('session');
 			$this->load->library('form_validation');
 		}
@@ -171,4 +172,16 @@
 				return false;
 			}
 		}
+
+		// public function searchProduct() {
+		// 	$searchTerm = $this->input->get('search'); // Mengambil nilai pencarian dari query string
+		
+		// 	// Panggil model untuk melakukan pencarian produk berdasarkan nama
+		// 	$data['products'] = $this->User_Model->searchProductsByName($searchTerm);
+		
+		// 	// Muat view yang menampilkan hasil pencarian
+		// 	$this->load->view('pages/home', $data);
+		// }
+
 	}
+	

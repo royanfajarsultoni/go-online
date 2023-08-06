@@ -41,9 +41,9 @@
 			<div style="background-color: #006410;" id="top-header">
 				<div class="container">
 					<ul class="header-links pull-left">
-						<li><a href="<?php echo base_url(); ?>"><i class="fa fa-phone"></i> Go-Online</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
+						<li><a href="<?php echo base_url(); ?>"><i class="fa fa-globe"></i> Go-Online</a></li>
+						<!-- <li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li> -->
 					</ul>
 					<ul class="header-links pull-right">
           <?php if(!$this->session->userdata('login')): ?>
@@ -68,7 +68,7 @@
 						<!-- LOGO -->
 						<div class="col-md-3">
 							<div class="header-logo">
-								<a href="#" class="logo">
+								<a href="<?php echo base_url(); ?>" class="logo">
 									<img src="<?php echo base_url(); ?>assets/img/go_online_logo2.png" alt="">
 								</a>
 							</div>
@@ -78,14 +78,9 @@
 						<!-- SEARCH BAR -->
 						<div class="col-md-6">
 							<div class="header-search">
-								<form>
-									<select class="input-select">
-										<option value="0">All Categories</option>
-										<option value="1">Category 01</option>
-										<option value="1">Category 02</option>
-									</select>
-									<input class="input" placeholder="Search here">
-									<button class="search-btn">Search</button>
+								<form action="<?php echo site_url('Pages/search'); ?>" method="get">
+									<input class="input" type="text" name="search" placeholder="Search here">
+									<button type="submit" class="search-btn">Search</button>
 								</form>
 							</div>
 						</div>

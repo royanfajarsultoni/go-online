@@ -20,12 +20,12 @@
 		   	 <input type="password" class="form-control" name="password" placeholder="Password">
 		   </div>
 		   <div class="form-group">
-		   	 <label>Confirm Password</label>
-		   	 <input type="password" class="form-control" name="password2" placeholder="Confirm Password">
+		   	 <label>Konfirmasi Password</label>
+		   	 <input type="password" class="form-control" name="password2" placeholder="Konfirmasi Password">
 		   </div>
 		   <div class="form-group">
-		   	 <label>Zipcode</label>
-		   	 <input type="text" name="zipcode" class="form-control" placeholder="Zipcode">
+		   	 <label>Nomor Telepon</label>
+		   	 <input type="text" name="notelp" class="form-control" placeholder="Nomor Telepon">
 		   </div>
 		   <button type="submit" class="btn btn-primary">Submit</button>
 		<?php echo form_close() ?>

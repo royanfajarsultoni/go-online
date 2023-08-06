@@ -134,9 +134,9 @@
                         </div>
                         <!-- table card end -->
                     </div>
-                    <div class="col-md-12 col-xl-4">
+                    <!-- <div class="col-md-12 col-xl-4"> -->
                         <!-- widget primary card start -->
-                        <div class="card table-card widget-primary-card">
+                        <!-- <div class="card table-card widget-primary-card">
                             <div class="">
                                 <div class="row-table">
                                     <div class="col-sm-3 card-block-big">
@@ -148,10 +148,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- widget primary card end -->
                         <!-- widget-success-card start -->
-                        <div class="card table-card widget-success-card">
+                        <!-- <div class="card table-card widget-success-card">
                             <div class="">
                                 <div class="row-table">
                                     <div class="col-sm-3 card-block-big">
@@ -163,9 +163,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- widget-success-card end -->
-                    </div>
+                    <!-- </div> -->
                    
                     <div class="col-lg-12">
                         <div class="row">
@@ -201,7 +201,8 @@
                         </div>
                     </div>
                    
-                    <div class="col-md-6 col-xl-3">
+                    <!-- TAMPILAN SOSMED -->
+                    <!-- <div class="col-md-6 col-xl-3">
                         <div class="card social-widget-card">
                             <div class="card-block-big bg-facebook">
                                 <h3>1165 +</h3>
@@ -236,7 +237,7 @@
                                 <i class="icofont icofont-social-google-plus"></i>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
        
